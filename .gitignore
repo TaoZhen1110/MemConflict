@@ -1,0 +1,31 @@
+.env
+*.log
+*.pyc
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+
+# Generated experiment outputs.
+Results/
+Scores/
+Evaluation/Diagnostics/*.csv
+
+# Local or downloaded model artifacts.
+Practice/
+*.bin
+*.pt
+*.pth
+*.safetensors
+
+# Generated figures and local render outputs.
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# OS/editor files.
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

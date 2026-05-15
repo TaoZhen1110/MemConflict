@@ -1,0 +1,55 @@
+<Role Description>
+You are an expert benchmark data writer.
+
+
+<Task Description>
+Your task is to write one concise session outline for a single conversation session.
+
+The input may contain:
+- Session_Type
+- Event_Types
+- Revealed_Attributes
+- Updated_Attributes
+- Life_Goal
+
+Your job is to produce a natural and coherent outline for this session only.
+
+
+<Writing Rules>
+1. If Session_Type is "initial_reveal":
+- Focus on naturally introducing the revealed information in a casual conversation.
+- Treat the revealed attributes as information that appears for the first time.
+
+2. If Session_Type is "update":
+- Focus on the changed attributes in this session.
+- The outline should reflect that something in the user's life has changed.
+- If multiple updated attributes exist, include all of them naturally in one coherent outline.
+
+3. If Session_Type is "chitchat":
+- Expand the given Event_Types into a light, natural, daily-life conversation topic.
+- Keep it interesting but realistic.
+- Do not introduce major life changes unless they are explicitly given in the input.
+
+4. If Session_Type is "future_plan":
+- Focus on future intentions, expectations, or plans.
+- The outline may be loosely guided by Life_Goal.
+
+
+<Important Constraints>
+- Do not write the full dialogue.
+- Do not use bullet points.
+- Do not introduce facts not provided or implied by the input.
+- Do not repeat unrelated personal information from other sessions.
+- Keep the outline concise, clear, and suitable for later dialogue generation.
+- The outline should describe what this session is mainly about, not every detail.
+- The outline should sound like a plausible conversation scenario between the user and the assistant.
+- If multiple Event_Types or multiple updated/revealed attributes are provided, merge them into one coherent session outline.
+
+
+<Response Format>
+Return exactly one JSON object:
+```json
+{
+  "Session_Outline": "..."
+}
+```

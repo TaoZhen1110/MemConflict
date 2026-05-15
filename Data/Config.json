@@ -1,0 +1,349 @@
+{
+    "Fixed_Information": {
+        "Names": {
+            "Family_Names": ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez", "Hernandez", "Lopez", "Gonzalez", "Wilson", "Anderson", "Thomas", "Taylor", "Moore", "Jackson", "Martin"],
+            "Male_Names": ["James", "Robert", "John", "Michael", "David", "William", "Richard", "Joseph", "Thomas", "Christopher", "Charles", "Daniel", "Matthew", "Anthony", "Mark", "Donald", "Steven", "Paul", "Andrew", "Joshua"],
+            "Female_Names": ["Mary", "Patricia", "Jennifer", "Linda", "Elizabeth", "Barbara", "Susan", "Jessica", "Sarah", "Karen", "Nancy", "Lisa", "Betty", "Helen", "Sandra", "Donna", "Carol", "Ruth", "Sharon", "Michelle"]
+        },
+        "Genders": ["Male", "Female"],
+        "Birthdate": {
+            "Years_Range": [1960, 2006],
+            "Months_Range": [1, 12],
+            "Days_Range": [1, 28]
+        },
+        "Birthplace": {
+            "Countries": ["USA", "China", "Germany", "Japan", "India", "UK", "France", "Italy", "Russia", "Canada", "Brazil",
+                        "Spain", "South Korea", "Mexico", "Australia", "Turkey", "Indonesia", "Netherlands", "Saudi Arabia", "Switzerland",
+                        "Singapore"],
+            "Cities": {
+                "USA": ["New York", "Los Angeles", "Chicago", "San Francisco", "Washington D.C.", "Miami", "Dallas", "Boston", "Seattle", "Houston"],
+                "China": ["Hong Kong", "Beijing", "Shanghai", "Guangzhou", "Shenzhen", "Chengdu", "Hangzhou", "Wuhan", "Chongqing", "Nanjing", "Tianjin"],
+                "Germany": ["Berlin", "Munich", "Hamburg", "Frankfurt", "Cologne", "Düsseldorf", "Stuttgart", "Leipzig"],
+                "Japan": ["Tokyo", "Osaka", "Kyoto", "Yokohama", "Hiroshima", "Nagoya", "Sapporo", "Fukuoka"],
+                "India": ["New Delhi", "Mumbai", "Bangalore", "Chennai", "Kolkata", "Hyderabad", "Ahmedabad", "Pune"],
+                "UK": ["London", "Manchester", "Birmingham", "Edinburgh", "Glasgow", "Liverpool", "Bristol", "Leeds", "Cardiff"],
+                "France": ["Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Lille", "Bordeaux", "Nantes"],
+                "Italy": ["Rome", "Milan", "Venice", "Florence", "Naples", "Turin", "Bologna", "Genoa"],
+                "Russia": ["Moscow", "Saint Petersburg", "Novosibirsk", "Yekaterinburg", "Nizhny Novgorod", "Kazan", "Omsk", "Samara"],
+                "Canada": ["Toronto", "Vancouver", "Montreal", "Ottawa", "Calgary", "Edmonton", "Quebec City", "Winnipeg"],
+                "Brazil": ["São Paulo", "Rio de Janeiro", "Brasília", "Salvador", "Fortaleza", "Belo Horizonte", "Recife", "Porto Alegre"],
+                "Spain": ["Madrid", "Barcelona", "Seville", "Valencia", "Malaga", "Bilbao", "Granada", "Zaragoza"],
+                "South Korea": ["Seoul", "Busan", "Incheon", "Daegu", "Daejeon", "Gwangju", "Suwon"],
+                "Mexico": ["Mexico City", "Guadalajara", "Monterrey", "Cancun", "Puebla", "Tijuana", "Mérida"],
+                "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Canberra", "Hobart", "Darwin"],
+                "Turkey": ["Istanbul", "Ankara", "Izmir", "Antalya", "Bursa", "Adana", "Konya", "Gaziantep"],
+                "Indonesia": ["Jakarta", "Surabaya", "Bandung", "Medan", "Makassar", "Yogyakarta", "Semarang"],
+                "Netherlands": ["Amsterdam", "Rotterdam", "The Hague", "Utrecht", "Eindhoven", "Groningen", "Maastricht"],
+                "Saudi Arabia": ["Riyadh", "Jeddah", "Mecca", "Medina", "Dammam", "Khobar", "Abha"],
+                "Switzerland": ["Zurich", "Geneva", "Bern", "Basel", "Lucerne", "Lausanne", "St. Moritz"],
+                "Singapore": ["Singapore"]
+            }
+        },
+        "Education": {
+            "Highest_Degree": {
+                "PhD": 0.05,
+                "Master": 0.30,
+                "Bachelor": 0.50,
+                "Associate": 0.15
+            },
+            "Major": ["Computer Science", "Information Technology", "Electrical Engineering", "Mechanical Engineering",
+                    "Civil Engineering", "Business Administration", "Finance", "Economics", "Accounting", "Marketing", "Psychology",
+                    "Political Science", "Law", "Biology", "Chemistry", "Physics", "Mathematics", "Medicine", "Architecture", 
+                    "Art and Design"],
+            "University": {
+                "USA": ["Harvard University", "Stanford University", "Massachusetts Institute of Technology", "University of California, Berkeley", "Princeton University", "Yale University", "Columbia University", "University of Chicago", "California Institute of Technology", "University of California, Los Angeles"],
+                "China": ["Tsinghua University", "Peking University", "Fudan University", "Shanghai Jiao Tong University", "Zhejiang University", "University of Science and Technology of China", "Nanjing University", "Wuhan University"],
+                "Germany": ["Technical University of Munich", "Ludwig Maximilian University of Munich", "Heidelberg University", "Humboldt University of Berlin", "RWTH Aachen University", "University of Freiburg"],
+                "Japan": ["University of Tokyo", "Kyoto University", "Osaka University", "Tohoku University", "Nagoya University", "Waseda University", "Keio University"],
+                "India": ["Indian Institute of Technology Bombay", "Indian Institute of Technology Delhi", "Indian Institute of Science (IISc)", "University of Delhi", "Jawaharlal Nehru University (JNU)"],
+                "UK": ["University of Oxford", "University of Cambridge", "Imperial College London", "London School of Economics and Political Science", "University College London (UCL)", "University of Edinburgh", "University of Manchester"],
+                "France": ["Sorbonne University", "École Normale Supérieure, Paris", "École Polytechnique", "Sciences Po", "University of Paris-Saclay", "HEC Paris"],
+                "Italy": ["University of Bologna", "Sapienza University of Rome", "University of Milan", "University of Padua", "Politecnico di Milano"],
+                "Russia": ["Lomonosov Moscow State University", "Saint Petersburg State University", "Novosibirsk State University", "Higher School of Economics"],
+                "Canada": ["University of Toronto", "University of British Columbia", "McGill University", "University of Alberta", "McMaster University", "University of Waterloo"],
+                "Brazil": ["University of São Paulo", "Federal University of Rio de Janeiro", "State University of Campinas", "Federal University of Minas Gerais"],
+                "Spain": ["University of Barcelona", "Autonomous University of Madrid", "University of Valencia", "Complutense University of Madrid", "Pompeu Fabra University"],
+                "South Korea": ["Seoul National University", "Korea University", "Yonsei University", "KAIST", "Pohang University of Science and Technology", "Korea Advanced Institute of Science and Technology"],
+                "Mexico": ["National Autonomous University of Mexico", "Monterrey Institute of Technology and Higher Education", "University of Guadalajara", "Metropolitan Autonomous University"],
+                "Australia": ["Australian National University", "University of Melbourne", "University of Sydney", "University of Queensland", "University of New South Wales", "Monash University"],
+                "Turkey": ["Middle East Technical University", "Boğaziçi University", "Istanbul Technical University", "Koç University", "Sabancı University"],
+                "Indonesia": ["University of Indonesia", "Bandung Institute of Technology", "Gadjah Mada University", "Airlangga University"],
+                "Netherlands": ["Delft University of Technology", "University of Amsterdam", "Erasmus University Rotterdam", "Utrecht University", "Leiden University"],
+                "Saudi Arabia": ["King Saud University", "King Abdulaziz University", "King Fahd University of Petroleum and Minerals", "King Abdullah University of Science and Technology"],
+                "Switzerland": ["ETH Zurich", "University of Zurich", "École Polytechnique Fédérale de Lausanne", "University of Geneva", "University of Basel"],
+                "Hong Kong": ["University of Hong Kong", "Chinese University of Hong Kong", "Hong Kong University of Science and Technology"],
+                "Singapore": ["National University of Singapore", "Nanyang Technological University"]
+            }  
+        },
+        "Family_Life": {
+            "Typical_Ages": [18, 25, 35, 45, 55, 65],
+            "Age_based_Family_States": {
+                "18": {
+                    "parent_status": {"both_alive": 0.98, "one_deceased": 0.02, "both_deceased": 0.00}
+                },
+                "25": {
+                    "parent_status": {"both_alive": 0.90, "one_deceased": 0.08, "both_deceased": 0.02}
+                },
+                "35": {
+                    "parent_status": {"both_alive": 0.75, "one_deceased": 0.20, "both_deceased": 0.05}
+                },
+                "45": {
+                    "parent_status": {"both_alive": 0.55, "one_deceased": 0.35, "both_deceased": 0.10}
+                },
+                "55": {
+                    "parent_status": {"both_alive": 0.35, "one_deceased": 0.40, "both_deceased": 0.15}
+                },
+                "65": {
+                    "parent_status": {"both_alive": 0.20, "one_deceased": 0.50, "both_deceased": 0.30}
+                }
+            },
+            "Parent_Age_Range": [20, 40],
+            "Sibling_Count_Distribution": {
+                "0": 0.15,
+                "1": 0.55,
+                "2": 0.20,
+                "3": 0.07,
+                "4": 0.02,
+                "5": 0.01
+            },
+            "Sibling_Age_Diff_Range": [0, 10],
+            "Sibling_Type": ["Brother", "Sister"]
+        }
+    },
+    "Dynamic_Information": {
+        "Marital_Status": {
+            "Status": ["Single", "Dating", "Married", "Divorced"],
+            "Marital_Age_Diff_Range": [0, 8],
+            "Allowed_Transitions": {
+                "Single": ["Dating"],
+                "Dating": ["Married", "Single"],
+                "Married": ["Divorced"],
+                "Divorced": ["Dating"]
+            },
+            "Cooldown_Months": 2
+        },
+        "Children_Status": {
+            "Has_Children": ["Yes", "No"],
+            "Children_Count_Range": {
+                "1": 0.70,
+                "2": 0.20,
+                "3": 0.08,
+                "4": 0.02
+            },
+            "Parent_Child_Age_Gap_Range": [20, 35],
+            "Allowed_Parent_Status": ["Married", "Divorced"],
+            "Cooldown_Months": 10
+        },
+        "Career_Status": {
+            "Employment_Status": {"Employed": 0.75, "Unemployed": 0.15, "Entrepreneur": 0.10},
+            "Company_Types": {"Startup": 0.15, "Small_Company": 0.25, "Medium_Company": 0.30, "Large_Company": 0.20, "Multinational": 0.10},
+            "Job_Titles": {"Intern": 0.10, "Junior": 0.25, "Senior": 0.30, "Manager": 0.20, "Director": 0.10, "Executive": 0.05},
+            "Industries": {"Technology": 0.25, "Finance": 0.15, "Healthcare": 0.12, "Education": 0.10, "Manufacturing": 0.08,
+                        "Retail": 0.08, "Consulting": 0.07, "Media": 0.05, "Government": 0.05, "Legal": 0.05
+            },
+            "Company_Names": {
+                "Startup": ["Innovation Tech", "Future Intelligence", "Cloud Data", "Green Energy", "Smart Healthcare", 
+                            "Blockchain Tech", "Artificial Intelligence", "IoT Tech", "New Energy Tech", "Biotech"],
+                "Small_Company": ["Local Commerce", "Regional Services", "Professional Consulting", "Small Manufacturing", 
+                                "Community Services", "Family Workshop", "Individual Business", "Partnership Enterprise", 
+                                "Cooperative", "Micro Enterprise"],
+                "Medium_Company": ["Zhonglian Tech", "Huaxin Consulting", "Hengda Manufacturing", "Ruikang Healthcare", 
+                                    "Zhilian Education", "Oriental Trade", "Southern Construction", "Northern Logistics", 
+                                    "Western Development", "Central Investment"],
+                "Large_Company": ["Tencent", "Alibaba", "Baidu", "Huawei", "Xiaomi", "JD", "Meituan", "ByteDance", "Didi", 
+                                    "Pinduoduo"],
+                "Multinational": ["Microsoft", "Google", "Apple", "Amazon", "Tesla", "Intel", "IBM", "Oracle", "Cisco", 
+                                    "Qualcomm"]
+            },
+            "Monthly_Income": {"2000-5000": 0.15, "5000-10000": 0.25, "10000-25000": 0.30, "25000-50000": 0.20, 
+                                "50000-80000": 0.08, "80000-120000": 0.02},
+            "Savings_Amount": {"0-10000": 0.20, "10000-50000": 0.35, "50000-200000": 0.30, "200000-500000": 0.12, 
+                                "500000-1000000": 0.03},
+            "Cooldown_Months": 3
+        },
+        "Work_Status": {
+            "Current_State": ["Busy", "Normal", "Free", "On_Business_Trip"],
+            "Cooldown_Months": 1
+        },
+        "Health_Status": {
+            "Physical_Health": ["Energetic and Fit", "Generally Healthy", "Often Fatigued", "Physically Unwell"],
+            "Mental_Health": ["Emotionally Positive", "Emotionally Stable", "Frequently Stressed", "Emotionally Distressed"],
+            "Cooldown_Months": 1
+        },
+        "Social_Relationships": {
+            "Relationship_Count_Range": [2, 4],
+            "Relationship_Types": ["Friend", "Colleague", "Classmate", "Neighbor", "Online Friend"],
+            "Social_Status": {
+                "Current_State": [
+                    "Meeting_More_People",
+                    "Staying_in_Contact",
+                    "Seeing_People_More_Often",
+                    "Joining_Social_Activities",
+                    "Spending_Less_Time_Socializing",
+                    "Keeping_to_Oneself"
+                ],
+                "Cooldown_Months": 1
+            }
+        }
+    },
+    "Preferences": {
+        "Preference_Types_Count": [6, 10],
+        "Preference_Types": {
+            "Food_Preference": {
+                "Food_Items": ["Spicy Hotpot", "Boiled Chili Fish", "Kimchi Stew", "Chili Pork Stir-fry", "Mapo Tofu", 
+                                "Spicy Wings", "Steamed Fish", "Garden Salad", "Boiled Chicken", "Vegetable Soup", "Egg Custard", 
+                                "Rice Porridge", "Fried Pork Cutlet", "Cheeseburger", "Pepperoni Pizza", "Chicken Nuggets", 
+                                "Braised Pork Belly", "Mushroom Pasta", "Sashimi", "Cold Noodles", "Salmon Wrap", "Fruit Salad", 
+                                "Cold Chicken Salad", "Red Bean Soup", "French Toast", "Pancakes", "Baked Sweet Potato", 
+                                "Custard Buns"],
+                "Condition_Pairs": [
+                    ["Working Overtime", "Relaxing at Home"], ["Busy Morning", "Late Night Supper"], 
+                    ["Feeling Sick", "Feeling Healthy"], ["On a Diet", "On a Cheat Day"],     
+                    ["Hot Summer", "Cold Winter"], ["Outdoor Picnic", "Indoor Dining"],     
+                    ["Dining Alone", "Social Gathering"], ["Feeling Stressed", "Feeling Happy"]
+                ]
+            },
+            "Beverage_Preference": {
+                "Beverage_Items": ["Double Espresso", "Iced Americano", "Hot Latte", "Cold Brew Coffee", "Energy Drink", 
+                                    "Hot Green Tea", "Iced Oolong Tea", "Hot Pu-erh Tea", "Herbal Tea", "Chrysanthemum Tea",
+                                    "Classic Bubble Tea", "Iced Lemon Tea", "Hot Cocoa", "Strawberry Smoothie", "Mango Milkshake",
+                                    "Ice Cold Cola", "Sparkling Water", "Fresh Orange Juice", "Green Vegetable Juice", "Coconut Water",
+                                    "Craft Beer", "Red Wine", "Hot Oat Milk", "Iced Kombucha"],
+                "Condition_Pairs": [
+                    ["Working Overtime", "Relaxing at Home"], ["Busy Morning", "Before Night Sleep"],
+                    ["Feeling Sick/Cold", "After Intense Workout"], ["Feeling Sleepy", "Feeling Energetic"],
+                    ["Hot Summer", "Cold Winter"], ["Formal Meeting", "Casual Party"],
+                    ["Dining Alone", "Social Gathering"], ["Stressed/Anxious", "Relaxed/Happy"]
+                ]
+            },
+            "Reading_Preference": {
+                "Reading_Items": ["Science Fiction", "Mystery Thriller", "Fantasy Epic", "Romance Novel", "Comics",
+                                    "Horror Story", "History Book", "Business Guide", "Philosophy Text", "Popular Science",
+                                    "Biography / Memoir", "Academic Journal", "Physical Paper Book", "Digital E-book", 
+                                    "Audiobook", "Short Stories", "Poetry Collection", "Daily Newspaper"],
+                "Condition_Pairs": [
+                    ["Commuting on Subway", "Long Holiday/Weekend"], ["Short Work Break", "Deep Night Reading"],
+                    ["Seeking Relaxation", "Professional Self-Improvement"], ["Feeling Mentally Tired", "Feeling Highly Focused"],
+                    ["Traveling/On a Plane", "Quiet Library"], ["Bedtime Reading", "Morning Study Time"],
+                    ["Preparing for Exam", "Casual Pastime"], ["Reading Group Discussion", "Solo Reading Alone"]
+                ]
+            },
+            "Music_Preference": {
+                "Music_Items": ["Heavy Metal Rock", "Electronic Dance", "Hip-Hop", "Fast-paced Pop", "Epic Cinematic Score",
+                                "Calm Piano Solo", "Smooth Jazz", "Acoustic Folk", "Ambient / Meditative", "Classical String Quartet",
+                                "Vocal-heavy Ballads", "Classic R&B", "Country Music", "Classic Rock Anthem", "Lo-fi Focus Beats",
+                                "Baroque Orchestral", "Synth-focused Electronic"],
+                "Condition_Pairs": [
+                    ["Intense Workout", "Before Night Sleep"], ["Studying/Deep Work", "Driving on Highway"],
+                    ["Feeling Angry/Aggressive", "Feeling Sad/Sentimental"], ["Feeling Happy/Energetic", "Feeling Stressed/Anxious"],
+                    ["Hosting a Party", "Alone in a Rainy Day"], ["Commuting in Noise", "Reading in a Library"],
+                    ["Cleaning the House", "Meditation Session"], ["Morning Wake-up", "Late Night Wind-down"]
+                ]
+            },
+            "Movie_Preference": {
+                "Movie_Items": ["Hollywood Blockbuster", "Sci-Fi Epic", "Action / Superhero", "Gory Horror Movie", "Disaster Masterpiece",
+                                "Mind-bending Thriller", "Historical Documentary", "Philosophical Indie Film", "Political Drama",
+                                "Classic Silent Film", "Feel-good Comedy", "Family Animation", "Romantic Movie", "Musical Film",
+                                "Satirical Sitcom", "Dark & Gritty Crime", "Slow Reflective Drama", "Fast-paced Mystery", 
+                                "Teen / School Movie"],
+                "Condition_Pairs": [
+                    ["Mentally Exhausted", "Highly Focused"], ["Insomnia / Late Night", "Bright Morning"],
+                    ["Family / Kids Night", "Solo / Private Time"], ["First Date", "Old Friends Reunion"],
+                    ["Short Work Break", "Long Weekend / Holiday"], ["Seeking Escapism", "Seeking Self-Reflection"],
+                    ["Feeling Heartbroken", "Feeling Bored"], ["Anxious / Stressed", "Relaxed / Happy"]
+                ]
+            },
+            "Game_Preference": {
+                "Game_Items": ["Honor of Kings", "PUBG", "League of Legends", "Street Fighter (Fighting)", "CS:GO", 
+                                "Racing Games", "Candy Crush", "Farming Games", "Animal Crossing", "Simulation Games", 
+                                "Sudoku / Crosswords", "Solitaire / Card Games", "Open-world Adventure", 
+                                "Detective / Mystery Games", "Horror Games", "Story-driven Games", "Puzzle Games",
+                                "Civilization", "City Building Games", "Restaurant Management", "Chess / Board Games"],
+                "Condition_Pairs": [
+                    ["Exhausted after Work", "Full of Energy"], ["Feeling Stressed", "Feeling Bored"],
+                    ["5-minute Commute", "Whole Weekend at Home"], ["Quick Lunch Break", "Late Night Solo Session"],
+                    ["Dining Alone", "Hanging with Friends"], ["In a Noisy Café", "In a Quiet Bedroom"],
+                    ["Want to Vent Anger", "Want to Calm Down"], ["Waiting for Someone", "Intentional Gaming Time"]
+                ]
+            },
+            "Sport_Preference": {
+                "Sport_Items": ["Basketball", "Football", "Badminton", "Table Tennis", "Tennis", "Outdoor Running", 
+                                "Yoga / Pilates", "Swimming", "Stretching at Home", "Evening Walk", "Tai Chi",
+                                "Hiking / Climbing", "Skiing / Snowboarding", "Cycling", "Surfing / Beach Sports",
+                                "Watching World Cup", "Watching NBA", "Watching F1 Racing", "Watching Tennis",
+                                "Watching Esports"],
+                "Condition_Pairs": [ 
+                    ["Full of Energy", "Exhausted after Work"], ["To Lose Weight", "To Relieve Stress"],
+                    ["Sunny Outdoor", "Rainy/Indoor"], ["Hot Summer", "Cold Winter"],
+                    ["Hanging with Friends", "Alone in Private"], ["Early Morning", "Late at Night"],
+                    ["Feeling Competitive", "Feeling Lazy"], ["Recovering from Injury", "Peak Physical Condition"]
+                ]
+            },
+            "Clothing_Preference": {
+                "Clothing_Items": ["Formal Business Suit", "White Button-down Shirt", "Polished Leather Shoes", 
+                                    "Tailored Wool Coat", "Elegant Evening Dress", "Oversized Hoodie", "Baggy Cargo Pants",
+                                    "Vintage Denim Jacket", "Graphic T-shirt", "Classic White Sneakers", "Tight Yoga Pants",
+                                    "Techwear Windbreaker", "Breathable Gym Tank", "Waterproof Raincoat", "Thermal Underwear",
+                                    "Bright Patterned Shirt", "Neutral Linen Set", "Soft Cashmere Sweater", "Loose Cotton Pajamas",
+                                    "Black Minimalist Outfit"],
+                "Condition_Pairs": [
+                    ["Important Meeting", "Weekend Hangout"], ["Formal Party", "Staying at Home Alone"],
+                    ["Hot Summer Day", "Freezing Winter Night"], ["Heavy Rainy Day", "Bright Sunny Day"],
+                    ["To Impress Others", "For Maximum Comfort"], ["Going to the Gym", "Going to the Office"],
+                    ["Feeling High-profile", "Wanting to Blend In"], ["Productive Workday", "Lazy Sunday"]
+                ]
+            },
+            "Pet_Preference": {
+                "Pet_Items": ["Active Golden Retriever", "High-energy Border Collie", "Protective German Shepherd",
+                                "Small Quiet French Bulldog", "Miniature Poodle", "Cuddly Ragdoll Cat",
+                                "Independent Street Cat", "Playful Siamese Cat", "Hairless Sphynx Cat",
+                                "Colorful Goldfish", "Quiet Hamster", "Smart Parrot", "Docile House Rabbit", "Green Iguana"],
+                "Condition_Pairs": [
+                    ["Small Studio Apartment", "House with Large Garden"], ["Rented Room", "Self-owned Property"], 
+                    ["Extremely Busy Work", "Retired / Plenty of Free Time"], ["Outdoor Active Person", "Indoor Homebody"],
+                    ["Severe Fur Allergy", "No Allergies"], ["Living with Toddlers", "Living Alone"],
+                    ["Seeking Companionship", "Seeking Home Security"], ["Looking for a Challenge", "Looking for Low Maintenance"]
+                ]
+            },
+            "Travel_Preference": {
+                "Travel_Items": ["Luxury Resort Stay", "All-inclusive Cruise", "Five-star Hotel Vacation", 
+                                    "Private Guided Tour", "Relaxing Spa Retreat", "Backpacking Trip", 
+                                    "Budget Hostel Stay", "Remote Wilderness Trek", "Mountain Climbing", 
+                                    "Camping in the Wild", "Fast-paced City Tour", "Slow Rural Stay", 
+                                    "Self-driving Road Trip", "Spontaneous Solo Travel", "Busy Shopping Trip",
+                                    "Tropical Island Getaway", "Skiing in the Mountains", "Historical Site Visit",
+                                    "Desert Exploration", "Theme Park Visit"],
+                "Condition_Pairs": [
+                    ["Low on Budget", "After a Big Promotion"], ["Feeling Adventurous", "Seeking Absolute Peace"],
+                    ["Short Long-weekend", "Annual 2-week Leave"], ["Full of Energy", "Physically Exhausted"],
+                    ["Traveling Solo", "With Elderly or Kids"], ["Traveling with Friends", "Romantic Honeymoon"],
+                    ["Escaping the Heat", "Seeking Snow"], ["Rainy Season", "Peak Sunny Season"]
+                ]
+            }
+        }
+    },
+    "Personality": {
+        "MBTI_Types": ["INTJ", "INTP", "ENTJ", "ENTP", "INFJ", "INFP", "ENFJ", "ENFP", "ISTJ", "ISFJ", "ESTJ", "ESFJ", "ISTP", "ISFP", "ESTP", "ESFP"],
+        "MBTI_Tags": {
+            "INTJ": ["Strategic Thinking", "Independent", "Perfectionist"],
+            "INTP": ["Logical Analysis", "Innovative Thinking", "Truth Seeker"],
+            "ENTJ": ["Strong Leadership", "Goal-Oriented", "Efficiency-First"],
+            "ENTP": ["Innovative Spirit", "Active Thinking", "Debate Skills"],
+            "INFJ": ["Strong Insight", "Idealism", "Meaning Seeker"],
+            "INFP": ["Creative", "Authentic", "Harmony Seeker"],
+            "ENFJ": ["Inspiring", "Growth-Focused", "Excellence Seeker"],
+            "ENFP": ["Enthusiastic", "Creative", "Possibility Seeker"],
+            "ISTJ": ["Responsible", "Practical", "Detail-Oriented"],
+            "ISFJ": ["Considerate", "Loyal", "Service-Oriented"],
+            "ESTJ": ["Organizational Skills", "Execution Skills", "Efficiency-Focused"],
+            "ESFJ": ["Friendly", "Coordination Skills", "Harmony-Focused"],
+            "ISTP": ["Hands-on Skills", "Calm Rational", "Problem Solver"],
+            "ISFP": ["Artistic Talent", "Gentle Friendly", "Beauty Seeker"],
+            "ESTP": ["Action-Oriented", "Adaptable", "Present-Focused"],
+            "ESFP": ["Outgoing", "Social Skills", "People-Focused"]
+        }
+    },
+    "life_goal": {
+        "life_goal_types": ["Social Mobility", "Achievement-Driven", "Financial Freedom", "Technology Idealist", "Cultural Heritage", "Humanitarian Care", "Philosophical Exploration"]
+    }
+}

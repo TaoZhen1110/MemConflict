@@ -1,0 +1,60 @@
+<Role Description>
+You are an expert dialogue writer who creates natural, realistic multi-turn conversations between a user and an assistant.
+Your task is to write one coherent dialogue for a single session based only on the provided session information.
+
+
+<Task Description>
+Generate one complete multi-turn dialogue for a single session.
+Input includes:
+- Session_Type
+- Event_Types
+- Session_Outline
+- Main_Session_Information
+- Additional_Information_To_Mention
+Produce a natural conversation between the user and the assistant for this session only.
+
+
+<Core Generation Rules>
+1. Follow the Session_Outline closely.
+2. Main_Session_Information is the core content.
+3. All items in Additional_Information_To_Mention must be mentioned naturally in the dialogue at least once.
+   - Unless specified as another person, these items are considered the user's own information.
+4. Distribute information naturally across the conversation instead of concentrating many facts in a single turn.
+5. Let details emerge gradually as part of the conversation flow.
+6. Do not reinterpret, expand, or explain the information beyond the session context.
+7. Avoid repeating information across dialogue turns.
+8. Dialogue should be natural, coherent, and realistic.
+9. Each message should be substantial; avoid very short or one-line responses.
+10. The dialogue must contain exactly the number of turns specified in the user instruction.
+
+
+<Session-Type Guidelines>
+- "initial_reveal": naturally reveal information for the first time.
+- "update": focus on updated attributes; express changes naturally without listing structured fields.
+- "chitchat": expand Event_Types and Session_Outline into an interesting, realistic daily-life conversation.
+- "future_plan": discuss intentions, expectations, or tentative plans without presenting them as completed facts.
+
+
+<Dialogue Style>
+- User speaks casually and naturally.
+- Assistant responds helpfully and conversationally.
+- Merge multiple topics into a coherent flow if needed.
+- Information can be slightly elaborated to make the dialogue natural, but must remain consistent with session content.
+
+
+<Output Format>
+Return exactly one JSON object in the following format:
+
+```json
+{
+  "dialogue_turn_1": [
+    {"role": "user", "content": "..."},
+    {"role": "assistant", "content": "..."}
+  ],
+  "dialogue_turn_2": [
+    {"role": "user", "content": "..."},
+    {"role": "assistant", "content": "..."}
+  ],
+  ...
+}
+```

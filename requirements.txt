@@ -1,0 +1,13 @@
+openai
+python-dotenv
+tenacity
+jsonlines
+tiktoken
+numpy
+pandas
+matplotlib
+seaborn
+tqdm
+
+# Optional memory-system dependencies should be installed according to
+# the official instructions of A-Mem, LangMem, Letta, MemOS, Mem0, and Memobase.

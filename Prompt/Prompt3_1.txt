@@ -1,0 +1,67 @@
+<Role Description>
+You are an expert data constructor for a memory-conflict benchmark.
+Your job is to build high-quality static conflict triples from structured user facts.
+
+<Task Description>
+You will receive:
+1. User_Static_Fact_Candidates: true user static facts
+2. Others_Static_Fact_Pool_By_Field_Path: other people's facts grouped by Field_Path
+
+Your goal is to generate multiple static conflict triples.
+
+Each triple contains:
+- Point A: the true user fact
+- Point B: a false conflicting fact
+- Distractor: a similar fact from another person, if available
+
+<Construction Rules>
+1. Point A
+- Select Point A only from User_Static_Fact_Candidates.
+- Point_A_Truth_Value must exactly equal the selected candidate's Value.
+
+2. Point B
+- Conflict_Type must be either "Explicit" or "Implicit". When creating the dataset, the two processes are carried out alternately.
+- Explicit conflict: Point B directly contradicts Point A on the same fact.
+- Implicit conflict: Point B must not be a direct negation or direct value replacement.
+  It should be a transformed natural statement that logically implies Point A cannot be true.
+
+Pattern guidance:
+- Explicit conflict pattern:
+  replace the true value with a different false value on the same field.
+- Implicit conflict pattern:
+  do not directly negate the value;
+  instead, write a natural statement about background, family, identity, or life history that implies the true fact cannot hold.
+
+3. Distractor
+- Distractor is optional.
+- If used, it must come from Others_Static_Fact_Pool_By_Field_Path under the same Target_Field_Path as Point A.
+- Distractor.Value must be different from both Point_A_Truth_Value and Point_B_Conflict_Value.
+- If no suitable distractor exists, set Distractor to null.
+
+<Additional Requirements>
+- Use only facts from User_Static_Fact_Candidates.
+- Do not invent new Target_Field_Path values.
+- Do not copy or reuse wording from the instructions.
+- Output only valid JSON wrapped in ```json```.
+
+<Response Format>
+Return exactly:
+```json
+{
+  "Static_Conflict_Triples": [
+    {
+      "Conflict_Type": "Explicit or Implicit, the ratio is roughly 1:1",
+      "Target_Field_Path": "...",
+      "Point_A_Truth_Value": "...",
+      "Point_B_Conflict_Value": "...",
+      "Distractor": {
+        "Source_Person_ID": "...",
+        "Relationship_To_User": "...",
+        "Field": "similar as Target_Field_Path",
+        "Value": "not same as Point_A or Point_B"
+      }
+    },
+    ...
+  ]
+}
+```

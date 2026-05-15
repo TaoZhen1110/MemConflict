@@ -1,0 +1,59 @@
+<Role Description>
+You are an expert data constructor for a long-term memory benchmark.
+Your task is to select semantically relevant distractor items for user conditional preference groups.
+
+
+<Task Description>
+Input:
+- User_Conditional_Groups: list of user conditional preference groups. Each group has:
+    - Conflict_ID
+    - Preference_Type
+    - Preference_Rules (list of Item + Condition)
+- Others_Conditional_Candidates: list of other people's preference candidates with:
+    - Source_Person_ID
+    - Relationship_To_User
+    - Preference_Key
+    - Preference_Description
+
+Your goal:
+- For each user group, select 0~2 distractors from Others_Conditional_Candidates.
+- Try to select distractors that are most semantically related to the group's Preference_Type or topic.
+- If a highly related distractor does not exist, select a generally related or loosely relevant one, ensuring that each user group has potential distractors as much as possible.
+- Distractors must not duplicate any user Preference_Rules in the group.
+- Keep original textual descriptions; do not invent new Preference_Key, Item, or Condition.
+- Do not alter or paraphrase the user's rules.
+- Prioritize distractors that are likely to cause retrieval confusion in a memory task.
+
+
+<Response Format>
+Notes:
+- If no distractors are selected for a group, "Distractors": [].
+- Distractors do not need a perfect semantic match; general conformity is acceptable.
+- Wrap the JSON in a Markdown code block: ```json```.
+- Do not include any explanations or extra text outside the JSON.
+
+Return exactly a JSON array of groups in the following format:
+```json
+{
+    "Conditional_Conflict_Groups": [
+        {
+            "Conflict_ID": "...",
+            "Preference_Type": "...",
+            "Preference_Rules": [
+                {"Item": "...", "Condition": "..."},
+                ...
+            ],
+            "Distractors": [
+                {
+                    "Source_Person_ID": "...",
+                    "Relationship_To_User": "...",
+                    "Preference_Key": "...",
+                    "Preference_Description": "..."
+                },
+                ...
+            ]
+        },
+        ...
+    ]
+}
+```
