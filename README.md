@@ -27,14 +27,13 @@ The benchmark also injects semantically similar distractors from related entitie
 | `Prompt/` | Full implementation prompts used by LLM-assisted construction and query refinement. |
 | `Evaluation/` | Evaluation scripts for memory systems, scoring, and failure diagnosis. |
 | `Ablation/` | Scripts for sensitivity analyses, including dialogue length, distractors, query style, and conflict distance. |
-| `PIPELINE.md` | File-level mapping between the paper sections and implementation scripts. |
 | `requirements.txt` | Core Python dependencies. |
 
 Experiment outputs, logs, local model files, and private environment files are intentionally excluded.
 
 ## Dataset
 
-The released data are stored in `Data/`. The final benchmark file is:
+The released data are stored in `Data/`. This repository currently provides six representative sample instances for inspection and reproducibility checks. The final benchmark file is:
 
 ```text
 Data/Step4_4.jsonl
@@ -76,7 +75,7 @@ Step3_*  Conflict and distractor construction
 Step4_*  Dialogue generation, query construction, and dataset statistics
 ```
 
-The numbered filenames are kept to preserve the original construction order and their alignment with the prompt files. See `PIPELINE.md` for a detailed mapping between scripts, prompts, and paper sections.
+The numbered filenames are kept to preserve the original construction order and their alignment with the prompt files.
 
 ## Evaluation
 
