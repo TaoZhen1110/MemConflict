@@ -77,6 +77,20 @@ Step4_*  Dialogue generation, query construction, and dataset statistics
 
 The numbered filenames are kept to preserve the original construction order and their alignment with the prompt files.
 
+You can also run the full construction pipeline with the wrapper script:
+
+```bash
+python Code/run_construction_pipeline.py --count 10 --output_dir Data/Generated
+```
+
+`--count` controls how many persona seeds are sampled in `Step1_1`. The final generated benchmark file will be:
+
+```text
+Data/Generated/Step4_4.jsonl
+```
+
+If reusing the same output directory, pass `--overwrite` to remove previously generated intermediate files first. LLM-assisted stages require a valid `.env` configuration and will consume API tokens.
+
 ## Evaluation
 
 System-specific evaluation scripts are provided in `Evaluation/`:

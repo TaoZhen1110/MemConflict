@@ -1,6 +1,7 @@
 import argparse
 import json
 import jsonlines
+import os
 import traceback
 from llm_request import llm_request, calculate_cumulative_cost
 from dotenv import load_dotenv
@@ -11,9 +12,11 @@ logger = logging.getLogger(__name__)
 
 load_dotenv()
 
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(CURRENT_DIR)
 
 ############### Load prompt
-with open("MemConflict/Prompt/Prompt1_5.txt", 'r', encoding='utf-8') as f:
+with open(os.path.join(PROJECT_DIR, "Prompt", "Prompt1_5.txt"), 'r', encoding='utf-8') as f:
     Step1_5_Prompt = f.read()
 
 

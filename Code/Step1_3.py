@@ -12,8 +12,11 @@ logger = logging.getLogger(__name__)
 
 load_dotenv()
 
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+PROJECT_DIR = os.path.dirname(CURRENT_DIR)
+
 ############### Load prompt
-with open("MemConflict/Prompt/Prompt1_3.txt", 'r', encoding='utf-8') as f:
+with open(os.path.join(PROJECT_DIR, "Prompt", "Prompt1_3.txt"), 'r', encoding='utf-8') as f:
     Step1_3_Prompt = f.read()
 
 
