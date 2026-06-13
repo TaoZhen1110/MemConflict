@@ -142,13 +142,10 @@ Failure diagnosis scripts decompose incorrect answers into retrieval failures an
 If you use MemConflict, please cite our arXiv preprint:
 
 ```bibtex
-@misc{tao2026memconflict,
-  title         = {MemConflict: Evaluating Long-Term Memory Systems Under Memory Conflicts},
-  author        = {Zhen Tao and Jinxiang Zhao and Peng Liu and Dinghao Xi and Yanfang Chen and Wei Xu and Zhiyu Li},
-  year          = {2026},
-  eprint        = {2605.20926},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.IR},
-  url           = {https://arxiv.org/abs/2605.20926}
+@article{tao2026memconflict,
+  title={MemConflict: Evaluating Long-Term Memory Systems Under Memory Conflicts},
+  author={Tao, Zhen and Zhao, Jinxiang and Liu, Peng and Xi, Dinghao and Chen, Yanfang and Xu, Wei and Li, Zhiyu},
+  journal={arXiv preprint arXiv:2605.20926},
+  year={2026}
 }
 ```
