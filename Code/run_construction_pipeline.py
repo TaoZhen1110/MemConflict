@@ -1,4 +1,5 @@
 import argparse
+import json
 import shutil
 import subprocess
 import sys
@@ -235,14 +236,36 @@ def build_step_commands(args):
 
 
 def validate_args(args):
-    if args.count < 1:
-        raise SystemExit("--count must be at least 1")
     if not args.seed_file.exists():
         raise SystemExit(f"Seed file not found: {args.seed_file}")
     if not args.config_file.exists():
         raise SystemExit(f"Config file not found: {args.config_file}")
     if args.output_dir.resolve() == DATA_DIR.resolve() and args.overwrite:
         raise SystemExit("Refusing to overwrite the released Data/ directory. Use a separate --output_dir.")
+    if args.append_final_to and args.output_dir.resolve() == args.append_final_to.resolve().parent:
+        raise SystemExit("--output_dir must be separate from the directory containing --append_final_to.")
+    if args.target_total is not None:
+        if args.target_total < 1:
+            raise SystemExit("--target_total must be at least 1")
+        existing_count = count_jsonl_lines(args.append_final_to) if args.append_final_to else 0
+        args.count = args.target_total - existing_count
+        if args.count <= 0:
+            raise SystemExit(
+                f"Target already has {existing_count} rows, which is >= --target_total {args.target_total}."
+            )
+        print(
+            f"[PIPELINE] Target total: {args.target_total}; existing rows: {existing_count}; "
+            f"generating {args.count} new rows."
+        )
+    if args.count < 1:
+        raise SystemExit("--count must be at least 1")
+
+
+def count_jsonl_lines(path):
+    if not path or not path.exists():
+        return 0
+    with path.open("rb") as f:
+        return sum(1 for line in f if line.strip())
 
 
 def prepare_outputs(args):
@@ -280,6 +303,7 @@ def prepare_outputs(args):
 def run_pipeline(args):
     validate_args(args)
     prepare_outputs(args)
+    prepare_append_seed_file(args)
 
     commands = build_step_commands(args)
     for step_name, command in commands:
@@ -288,6 +312,84 @@ def run_pipeline(args):
 
     final_file = args.output_dir.resolve() / "Step4_4.jsonl"
     print(f"\n[PIPELINE] Done. Final benchmark file: {final_file}")
+    if args.append_final_to:
+        append_jsonl(final_file, args.append_final_to.resolve())
+
+
+def append_jsonl(source_file, target_file):
+    if not source_file.exists():
+        raise SystemExit(f"Final generated file not found: {source_file}")
+
+    source_data = source_file.read_bytes()
+    if not source_data.strip():
+        raise SystemExit(f"Final generated file is empty: {source_file}")
+
+    target_file.parent.mkdir(parents=True, exist_ok=True)
+    existing_count = count_jsonl_lines(target_file)
+    with target_file.open("ab") as target:
+        if target_file.exists() and target_file.stat().st_size > 0:
+            with target_file.open("rb") as reader:
+                reader.seek(-1, 2)
+                if reader.read(1) != b"\n":
+                    target.write(b"\n")
+        target.write(source_data)
+        if not source_data.endswith(b"\n"):
+            target.write(b"\n")
+
+    appended_count = count_jsonl_lines(source_file)
+    final_count = count_jsonl_lines(target_file)
+    print(
+        f"[PIPELINE] Appended {appended_count} rows to {target_file}. "
+        f"Rows before: {existing_count}; rows after: {final_count}."
+    )
+
+
+def prepare_append_seed_file(args):
+    if not args.append_final_to or not args.append_final_to.exists():
+        return
+
+    existing_seeds = collect_persona_seeds(args.append_final_to)
+    if not existing_seeds:
+        return
+
+    filtered_seed_file = args.output_dir.resolve() / "_available_seeds.jsonl"
+    available_count = 0
+    with args.seed_file.open("r", encoding="utf-8") as source, filtered_seed_file.open(
+        "w", encoding="utf-8"
+    ) as target:
+        for line in source:
+            if not line.strip():
+                continue
+            item = json.loads(line)
+            seed = item.get("persona")
+            if seed in existing_seeds:
+                continue
+            target.write(json.dumps(item, ensure_ascii=False) + "\n")
+            available_count += 1
+
+    if available_count < args.count:
+        raise SystemExit(
+            f"Only {available_count} unused persona seeds are available, but {args.count} are requested."
+        )
+
+    args.seed_file = filtered_seed_file
+    print(
+        f"[PIPELINE] Excluding {len(existing_seeds)} existing persona seeds from "
+        f"{args.append_final_to.resolve()}."
+    )
+
+
+def collect_persona_seeds(jsonl_file):
+    seeds = set()
+    with jsonl_file.open("r", encoding="utf-8") as f:
+        for line in f:
+            if not line.strip():
+                continue
+            item = json.loads(line)
+            seed = item.get("metadata", {}).get("persona_seed")
+            if seed:
+                seeds.add(seed)
+    return seeds
 
 
 def parse_args():
@@ -298,7 +400,13 @@ def parse_args():
         "--count",
         type=int,
         default=1,
-        help="Number of persona seeds to sample in Step1_1.",
+        help="Number of new persona seeds to sample in Step1_1.",
+    )
+    parser.add_argument(
+        "--target_total",
+        type=int,
+        default=None,
+        help="Generate only enough new rows for append_final_to to reach this total.",
     )
     parser.add_argument(
         "--seed_file",
@@ -338,6 +446,12 @@ def parse_args():
         "--overwrite",
         action="store_true",
         help="Remove existing generated files in output_dir/perfect_dir before running.",
+    )
+    parser.add_argument(
+        "--append_final_to",
+        type=Path,
+        default=None,
+        help="Append the generated Step4_4.jsonl rows to this existing JSONL file after the run.",
     )
     return parser.parse_args()
 

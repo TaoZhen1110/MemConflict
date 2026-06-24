@@ -91,6 +91,14 @@ Data/Generated/Step4_4.jsonl
 
 If reusing the same output directory, pass `--overwrite` to remove previously generated intermediate files first. LLM-assisted stages require a valid `.env` configuration and will consume API tokens.
 
+To extend an existing final JSONL file without reprocessing its old rows, generate new rows in a separate directory and append only the final `Step4_4.jsonl` output:
+
+```bash
+python Code/run_construction_pipeline.py --target_total 30 --output_dir Data/Generated_30 --append_final_to Data/Step4_4.jsonl
+```
+
+In this example, if `Data/Step4_4.jsonl` already contains 6 rows, the script will generate 24 new rows and append them, producing 30 rows in total.
+
 ## Evaluation
 
 System-specific evaluation scripts are provided in `Evaluation/`:
