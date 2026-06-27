@@ -23,7 +23,7 @@ The benchmark also injects semantically similar distractors from related entitie
 | Path | Description |
 | --- | --- |
 | `Code/` | Main construction pipeline for user profiles, timelines, conflicts, dialogues, and queries. |
-| `Data/` | Released benchmark data in JSONL format. |
+| `Data/` | Released benchmark data in JSONL format, including the expanded benchmark release. |
 | `Prompt/` | Full implementation prompts used by LLM-assisted construction and query refinement. |
 | `Evaluation/` | Evaluation scripts for memory systems, scoring, and failure diagnosis. |
 | `Ablation/` | Scripts for sensitivity analyses, including dialogue length, distractors, query style, and conflict distance. |
@@ -33,7 +33,7 @@ Experiment outputs, logs, local model files, and private environment files are i
 
 ## Dataset
 
-The released data are stored in `Data/`. This repository currently provides six representative sample instances for inspection and reproducibility checks. The final benchmark file is:
+The released data are stored in `Data/`. The repository now includes an expanded benchmark release for inspection, reproducibility checks, and external evaluation. The final benchmark file is:
 
 ```text
 Data/Step4_4.jsonl
