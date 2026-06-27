@@ -114,7 +114,13 @@ def sync_output_perfect_file(output_file: str, output_perfect_file: str) -> None
 
     os.makedirs(os.path.dirname(output_perfect_file), exist_ok=True)
     with open(output_perfect_file, "w", encoding="utf-8") as f:
-        json.dump(items, f, ensure_ascii=False, indent=4)
+        json.dump(items, f, ensure_ascii=False, indent=4, default=json_default)
+
+
+def json_default(obj):
+    if isinstance(obj, datetime):
+        return obj.strftime("%Y-%m-%d")
+    raise TypeError(f"Object of type {obj.__class__.__name__} is not JSON serializable")
 
 
 
@@ -294,7 +300,7 @@ def Generate_Single_Fixed_Persona(persona_seed: str) -> Dict:
             Sibling_age_diff = random.randint(Fixed_Information["Family_Life"]["Sibling_Age_Diff_Range"][0], Fixed_Information["Family_Life"]["Sibling_Age_Diff_Range"][1])
         
             if Sibling_age_diff == 0:
-                Sibling_Birthdate = Birth_Datetime
+                Sibling_Birthdate = Birth_Date
                 Sibling_Type = random.choice(Fixed_Information["Family_Life"]["Sibling_Type"])
                 key = f"Sibling_{i+1}"
                 Sibling_Information[key] = {
@@ -347,7 +353,7 @@ def Validate_Correct_Single_Persona(persona_seed: str, generated_persona: Dict) 
 
         User_Prompt = f"\nOriginal persona seed: {persona_seed}\n\n" + \
                 "Currently generated persona information:\n" + \
-                f"```json\n{json.dumps(generated_persona, ensure_ascii=False, indent=2)}\n```\n\n" + \
+                f"```json\n{json.dumps(generated_persona, ensure_ascii=False, indent=2, default=json_default)}\n```\n\n" + \
                 "Please analyze and correct the above persona information, " + \
                 "and present the final result only as valid JSON. The JSON must be wrapped " + \
                 "inside a Markdown code block: ```json```."
